@@ -18,6 +18,8 @@ def modify():
 
     # 資料夾下所有的檔案
     for image_name in os.listdir(os.getcwd()):
+        if image_name.split('.')[-1] == 'png' or image_name.split('.')[-1] == 'jpg':
+            continue
         print(image_name)
         im = Image.open(os.path.join(inputDir, image_name))
         (w, h) = im.size
